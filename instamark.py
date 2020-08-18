@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 line = "-" * 35
-chars = tuple('abcdefghijklmnopqrstyvwxyz`~@#$%^&*()_-=:;<,.>/?|')
 
 a = ('Distinction','A')
 b = ('Merit','B')
@@ -24,8 +23,6 @@ def invalid_value():
 def decider(percentage = 0):
 	if (percentage < 1) | (percentage > 100):
 		invalid_value()
-	elif percentage in chars:
-		invalid_value()
 	elif percentage >= 75:
 		print(str(percentage) + '%')
 		unpacker(a)
@@ -42,7 +39,6 @@ def decider(percentage = 0):
 		print(str(percentage) + '%')
 		unpacker(f)
 
-print(chars)
 try:
 	paper = int(input("Paper's Mark: "))
 
@@ -51,8 +47,6 @@ try:
 		if pupil == 0:
 			print("Good Bye!")
 			break
-		if pupil in chars:
-			invalid_value()
 		decider(calculator(paper, pupil))
 except:
 	pass
